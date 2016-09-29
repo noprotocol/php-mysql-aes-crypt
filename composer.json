@@ -1,0 +1,31 @@
+{
+    "name": "noprotocol/php-mysql-aes-crypt",
+    "description": "Encrypt/decrypt data in PHP to a format compatible with MySQL AES_ENCRYPT & AES_DECRYPT functions.",
+    "keywords": ["php", "mysql", "aes", "encryption", "decryption", "noprotocol"],
+    "require": {
+    },
+    "require-dev": {
+       "phpunit/phpunit": "5.0.*",
+       "symfony/stopwatch": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bob Fanger",
+            "email": "bob.fanger@noprotocol.nl"
+        },
+        {
+            "name": "Anne Jan Brouwer",
+            "email": "anne.jan.brouwer@noprotocol.nl"
+        },
+        {
+            "name": "Govert Verschuur",
+            "email": "govert.verschuur@noprotocol.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NoProtocol\\Encryption\\MySQL\\AES\\": "src/"
+        }
+    }
+}
