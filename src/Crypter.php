@@ -31,7 +31,7 @@ class Crypter {
     public function encrypt($data) {
         $pad_value = 16 - (strlen($data) % 16);
         $data = str_pad($data, (16 * (floor(strlen($data) / 16) + 1)), chr($pad_value));
-        return mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_ECB);
+        return @mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_ECB);
     }
 
     /**
@@ -42,7 +42,7 @@ class Crypter {
      * @return string       Decrypted data
      */
     public function decrypt($data) {
-        $data = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_ECB);
+        $data = @mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, $data, MCRYPT_MODE_ECB);
         return rtrim($data,"\x00..\x10");
     }
 
