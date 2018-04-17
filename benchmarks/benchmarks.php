@@ -1,5 +1,4 @@
 <?php
-
 require './vendor/autoload.php';
 
 use Symfony\Component\Stopwatch\Stopwatch;
@@ -11,7 +10,7 @@ $crypter = new Crypter('mySuperDuperSecretKey');
 $stopwatch = new Stopwatch();
 
 $amount = 10000;
-if(isset($argv[1]) && is_numeric($argv[1])) {
+if (isset($argv[1]) && is_numeric($argv[1])) {
     $amount = $argv[1];
 }
 
@@ -19,7 +18,7 @@ echo sprintf('Running benchmark with %s items...', $amount) . PHP_EOL;
 
 $stopwatch->start('encrypt');
 
-for($i = 0; $i < $amount; $i++ ) {
+for ($i = 0; $i < $amount; $i++ ) {
     $encrypted = $crypter->encrypt(uniqid('', true));
     $decrypted = $crypter->decrypt($encrypted);
 }
