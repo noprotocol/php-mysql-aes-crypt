@@ -5,7 +5,6 @@ use PHPUnit\Framework\TestCase;
 
 class AESEncryptTest extends TestCase
 {
-
     public function setUp()
     {
         parent::setUp();

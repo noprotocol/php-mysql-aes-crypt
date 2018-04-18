@@ -1,8 +1,9 @@
 <?php
+
 require './vendor/autoload.php';
 
-use Symfony\Component\Stopwatch\Stopwatch;
 use NoProtocol\Encryption\MySQL\AES\Crypter;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 set_time_limit(0);
 
@@ -14,7 +15,7 @@ if (isset($argv[1]) && is_numeric($argv[1])) {
     $amount = $argv[1];
 }
 
-echo sprintf('Running benchmark with %s items...', $amount) . PHP_EOL;
+echo sprintf('Running benchmark with %s items...', $amount).PHP_EOL;
 
 $stopwatch->start('encrypt');
 
@@ -25,4 +26,4 @@ for ($i = 0; $i < $amount; $i++) {
 
 $event = $stopwatch->stop('encrypt');
 
-echo sprintf('%s items in %s seconds (%s ms), max. memory usage %sKB (%sB)', $amount, $event->getDuration() / 1000, $event->getDuration(), $event->getMemory() / 1024, $event->getMemory()) . PHP_EOL;
+echo sprintf('%s items in %s seconds (%s ms), max. memory usage %sKB (%sB)', $amount, $event->getDuration() / 1000, $event->getDuration(), $event->getMemory() / 1024, $event->getMemory()).PHP_EOL;
