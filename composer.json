@@ -21,6 +21,10 @@
         {
             "name": "Govert Verschuur",
             "email": "govert.verschuur@noprotocol.nl"
+        },
+        {
+            "name": "Renan Martins Pimentel",
+            "email": "renan.pimentel@gmail.com"
         }
     ],
     "autoload": {
