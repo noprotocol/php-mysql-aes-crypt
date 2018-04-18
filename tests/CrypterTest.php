@@ -1,8 +1,9 @@
 <?php
 
 use NoProtocol\Encryption\MySQL\AES\Crypter;
+use PHPUnit\Framework\TestCase;
 
-class AESEncryptTest extends \PHPUnit_Framework_TestCase {
+class AESEncryptTest extends TestCase {
 
 	public function setUp()
 	{
@@ -13,7 +14,6 @@ class AESEncryptTest extends \PHPUnit_Framework_TestCase {
 	{
     	$crypter = new Crypter('mysecretseedingkey');
     	$result = $crypter->encrypt('foobar');
-        print_r($result);
     	$this->assertEquals('iWSjHbqpoNOPS6p1FsyyZw==', base64_encode($result));
     }
 
