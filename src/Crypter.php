@@ -2,20 +2,20 @@
 /**
  * Encrypt/decrypt data to a format compatible with MySQL aes_encrypt() & aes_decrypt() functions.
  *
- * @package    NoProtocol\Encryption\MySQL\AES
- * @author     Bob Fanger <bob.fanger@noprotocol.nl>
- * @author     Anne Jan Brouwer <anne.jan.brouwer@noprotocol.nl>
- * @author     Govert Verschuur <govert.verschuur@noprotocol.nl>
- * @author     Renan Martins Pimentel <renan.pimentel@gmail.com>
- * @copyright  2016 NoProtocol
- * @license    https://opensource.org/licenses/MIT The MIT License (MIT)
- * @version    2.0.0
- * @link       http://www.smashingmagazine.com/2012/05/replicating-mysql-aes-encryption-methods-with-php/
+ * @package   NoProtocol\Encryption\MySQL\AES
+ * @author    Bob Fanger <bob.fanger@noprotocol.nl>
+ * @author    Anne Jan Brouwer <anne.jan.brouwer@noprotocol.nl>
+ * @author    Govert Verschuur <govert.verschuur@noprotocol.nl>
+ * @author    Renan Martins Pimentel <renan.pimentel@gmail.com>
+ * @copyright 2016 NoProtocol
+ * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version   2.0.0
+ * @link      http://www.smashingmagazine.com/2012/05/replicating-mysql-aes-encryption-methods-with-php/
  */
 
 namespace NoProtocol\Encryption\MySQL\AES;
 
-class Crypter 
+class Crypter
 {
     protected $key;
 
@@ -27,7 +27,7 @@ class Crypter
     /**
      * Encrypts the data
      *
-     * @since 2.0
+     * @since  2.0
      * @param  string $data A string of data to encrypt.
      * @return (binary) string       The encrypted data
      */
@@ -35,9 +35,9 @@ class Crypter
     {
         $chiperIvLength = openssl_cipher_iv_length('AES-128-ECB');
         $iv = openssl_random_pseudo_bytes($chiperIvLength);
-        $pad_value = 16 - (strlen($data) % 16);
+        $padValue = 16 - (strlen($data) % 16);
         return openssl_encrypt(
-            str_pad($data, (16 * (floor(strlen($data) / 16) + 1)), chr($pad_value)), 
+            str_pad($data, (16 * (floor(strlen($data) / 16) + 1)), chr($padValue)),
             'AES-128-ECB', 
             $this->key, 
             OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING, 
@@ -48,7 +48,7 @@ class Crypter
     /**
      * Decrypts the data.
      *
-     * @since 2.0
+     * @since  2.0
      * @param  string $data A (binary) string of encrypted data
      * @return string       Decrypted data
      */
@@ -61,13 +61,13 @@ class Crypter
             OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING
         );
 
-        return rtrim($data,"\x00..\x10");
+        return rtrim($data, "\x00..\x10");
     }
 
     /**
      * Create and set the key used for encryption.
      *
-     * @since 2.0
+     * @since  2.0
      * @param  string $seed The seed used to create the key.
      * @return (binary) string the key to use in the encryption process.
      */

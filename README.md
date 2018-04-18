@@ -13,7 +13,7 @@ $ composer require noprotocol/php-mysql-aes-crypt
 ```json
 {
     "require": {
-        "noprotocol/php-mysql-aes-crypt": "^1.0.0"
+        "noprotocol/php-mysql-aes-crypt": "^2.0.0"
     }
 }
 ```
@@ -26,6 +26,7 @@ use NoProtocol\Encryption\MySQL\AES\Crypter;
 ```
 
 <a name="install-nocomposer"/>
+
 ### Without Composer
 
 Please use [Composer](http://getcomposer.org/). If you need to install manually, download [Crypter.php](https://github.com/noprotocol/php-mysql-aes-crypt/src/NoProtocol/Encryption/MySQL/AES/Crypter.php) from the repository and save the file into your project path.
