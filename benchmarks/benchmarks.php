@@ -18,11 +18,11 @@ echo sprintf('Running benchmark with %s items...', $amount) . PHP_EOL;
 
 $stopwatch->start('encrypt');
 
-for ($i = 0; $i < $amount; $i++ ) {
+for ($i = 0; $i < $amount; $i++) {
     $encrypted = $crypter->encrypt(uniqid('', true));
     $decrypted = $crypter->decrypt($encrypted);
 }
 
 $event = $stopwatch->stop('encrypt');
 
-echo sprintf('%s items in %s seconds (%s ms), max. memory usage %sKB (%sB)', $amount, $event->getDuration()/1000, $event->getDuration(), $event->getMemory()/1024, $event->getMemory()) . PHP_EOL;
+echo sprintf('%s items in %s seconds (%s ms), max. memory usage %sKB (%sB)', $amount, $event->getDuration() / 1000, $event->getDuration(), $event->getMemory() / 1024, $event->getMemory()) . PHP_EOL;

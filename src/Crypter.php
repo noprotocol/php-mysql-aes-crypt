@@ -54,7 +54,7 @@ class Crypter
      */
     public function decrypt($data)
     {
-        $data =  openssl_decrypt(
+        $data = openssl_decrypt(
             $data,
             'AES-128-ECB', 
             $this->key, 
