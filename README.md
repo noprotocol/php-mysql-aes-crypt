@@ -2,6 +2,10 @@
 
 Encrypt/decrypt values in PHP which are compatible with MySQL's `aes_encrypt()` & `aes_decrypt()` functions. <sup name="top">[1](#smashing-magazine-article)</sup>
 
+[![Build Status](https://travis-ci.org/noprotocol/php-mysql-aes-crypt.svg?branch=master)](https://travis-ci.org/noprotocol/php-mysql-aes-crypt)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/?branch=master)
+
 ## Installation
 
 ### With Composer
