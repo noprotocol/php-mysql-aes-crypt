@@ -6,6 +6,8 @@ Encrypt/decrypt values in PHP which are compatible with MySQL's `aes_encrypt()` 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/noprotocol/php-mysql-aes-crypt/?branch=master)
 
+[Change log](CHANGELOG.md)
+
 ## Installation
 
 ### With Composer
