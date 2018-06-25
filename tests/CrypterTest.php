@@ -11,7 +11,7 @@ class AESEncryptTest extends TestCase
     }
 
     /**
-     * Assert 'foobar' encrypts to 'iWSjHbqpoNOPS6p1FsyyZw==' with default method and secret key 'mysecretseedingkey'
+     * Assert 'foobar' encrypts to 'iWSjHbqpoNOPS6p1FsyyZw==' with default method and secret key 'mysecretseedingkey'.
      */
     public function testItEncrypts()
     {
@@ -21,7 +21,7 @@ class AESEncryptTest extends TestCase
     }
 
     /**
-     * Assert 'iWSjHbqpoNOPS6p1FsyyZw==' decrypts to 'foobar' with default method and secret key 'mysecretseedingkey'
+     * Assert 'iWSjHbqpoNOPS6p1FsyyZw==' decrypts to 'foobar' with default method and secret key 'mysecretseedingkey'.
      */
     public function testItDecrypts()
     {
@@ -31,7 +31,7 @@ class AESEncryptTest extends TestCase
     }
 
     /**
-     * Assert 'foobar' encrypts to 'tD2h0aC78o4kmlsSuA0LgQ==' with AES-192-ECB method and 'mysecretseedingkey'
+     * Assert 'foobar' encrypts to 'tD2h0aC78o4kmlsSuA0LgQ==' with AES-192-ECB method and 'mysecretseedingkey'.
      */
     public function testItEncrypts192()
     {
@@ -41,17 +41,17 @@ class AESEncryptTest extends TestCase
     }
 
     /**
-     * Assert 'tD2h0aC78o4kmlsSuA0LgQ==' decrypts to 'foobar' with AES-192-ECB method and 'mysecretseedingkey'
+     * Assert 'tD2h0aC78o4kmlsSuA0LgQ==' decrypts to 'foobar' with AES-192-ECB method and 'mysecretseedingkey'.
      */
     public function testItDecrypts192()
     {
         $crypter = new Crypter('mysecretseedingkey', 'AES-192-ECB');
         $result = $crypter->decrypt(base64_decode('tD2h0aC78o4kmlsSuA0LgQ=='));
-        $this->assertEquals('foobar', (string)$result);
+        $this->assertEquals('foobar', (string) $result);
     }
 
     /**
-     * Assert 'foobar' encrypts to 'HHA+m+yrcEBpfRN7Q6GLkw==' with AES-256-ECB method and 'mysecretseedingkey'
+     * Assert 'foobar' encrypts to 'HHA+m+yrcEBpfRN7Q6GLkw==' with AES-256-ECB method and 'mysecretseedingkey'.
      */
     public function testItEncrypts256()
     {
@@ -61,7 +61,7 @@ class AESEncryptTest extends TestCase
     }
 
     /**
-     * Assert 'HHA+m+yrcEBpfRN7Q6GLkw==' decrypts to 'foobar' with AES-256-ECB method and 'mysecretseedingkey'
+     * Assert 'HHA+m+yrcEBpfRN7Q6GLkw==' decrypts to 'foobar' with AES-256-ECB method and 'mysecretseedingkey'.
      */
     public function testItDecrypts256()
     {

@@ -23,6 +23,7 @@ class Crypter
 
     /**
      * Crypter constructor.
+     *
      * @param $seed
      * @param string $method default AES-128-ECB
      */
