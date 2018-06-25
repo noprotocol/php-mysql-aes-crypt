@@ -9,7 +9,7 @@
  * @copyright 2016 NoProtocol
  * @license   https://opensource.org/licenses/MIT The MIT License (MIT)
  *
- * @version   2.0.0
+ * @version   2.0.1
  *
  * @link      http://www.smashingmagazine.com/2012/05/replicating-mysql-aes-encryption-methods-with-php/
  */
@@ -18,10 +18,17 @@ namespace NoProtocol\Encryption\MySQL\AES;
 
 class Crypter
 {
+    protected $method;
     protected $key;
 
-    public function __construct($seed)
+    /**
+     * Crypter constructor.
+     * @param $seed
+     * @param string $method default AES-128-ECB
+     */
+    public function __construct($seed, $method = 'AES-128-ECB')
     {
+        $this->method = $method;
         $this->key = $this->generateKey($seed);
     }
 
@@ -32,17 +39,17 @@ class Crypter
      *
      * @param string $data A string of data to encrypt.
      *
-     * @return (binary) string       The encrypted data
+     * @return string (binary) The encrypted data
      */
     public function encrypt($data)
     {
-        $chiperIvLength = openssl_cipher_iv_length('AES-128-ECB');
+        $chiperIvLength = openssl_cipher_iv_length($this->method);
         $iv = openssl_random_pseudo_bytes($chiperIvLength);
         $padValue = 16 - (strlen($data) % 16);
 
         return openssl_encrypt(
             str_pad($data, (16 * (floor(strlen($data) / 16) + 1)), chr($padValue)),
-            'AES-128-ECB',
+            $this->method,
             $this->key,
             OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING,
             $iv
@@ -62,7 +69,7 @@ class Crypter
     {
         $data = openssl_decrypt(
             $data,
-            'AES-128-ECB',
+            $this->method,
             $this->key,
             OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING
         );
@@ -77,7 +84,7 @@ class Crypter
      *
      * @param string $seed The seed used to create the key.
      *
-     * @return (binary) string the key to use in the encryption process.
+     * @return string (binary) the key to use in the encryption process.
      */
     protected function generateKey($seed)
     {

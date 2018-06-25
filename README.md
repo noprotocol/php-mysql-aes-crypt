@@ -61,12 +61,24 @@ $encrypted = $crypter->encrypt('foobar');
 $decrypted = $crypter->decrypt($encrypted);
 ```
 
+Using a different encryption method is possible too when so desired.
+
+```php
+$crypter = new Crypter('mykeystring', 'AES-256-ECB');
+```
+
+NB: This is only tested for AES-128-ECB (default), AES-192-ECB and AES-256-ECB
+
 ## Benchmark
 A benchmark is provided in `/benchmarks/benchmarks.php`. You can set the number of items to run by passing a number as an argument, e.g.:
 
 `php benchmarks/benchmarks.php 20000`
 
 to run 20000 items. If no number is given, it defaults to 10000 items.
+
+You can also optionally set the desired encryption method for example:
+
+`php benchmarks/benchmarks.php 20000 AES-256-ECB`
 
 ## Testing
 PHPunit test cases are provided in `/tests`.

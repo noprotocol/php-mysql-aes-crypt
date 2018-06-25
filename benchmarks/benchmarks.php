@@ -7,12 +7,17 @@ use Symfony\Component\Stopwatch\Stopwatch;
 
 set_time_limit(0);
 
-$crypter = new Crypter('mySuperDuperSecretKey');
 $stopwatch = new Stopwatch();
 
 $amount = 10000;
 if (isset($argv[1]) && is_numeric($argv[1])) {
     $amount = $argv[1];
+}
+
+if (isset($argv[2])) {
+    $crypter = new Crypter('mySuperDuperSecretKey', $argv[2]);
+} else {
+    $crypter = new Crypter('mySuperDuperSecretKey');
 }
 
 echo sprintf('Running benchmark with %s items...', $amount).PHP_EOL;
