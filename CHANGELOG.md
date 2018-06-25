@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/noprotocol/php-mysql-aes-crypt/tree/HEAD)
 
-[Full Changelog](https://github.com/noprotocol/php-mysql-aes-crypt/compare/v2.0.0...HEAD)
+[Full Changelog](https://github.com/noprotocol/php-mysql-aes-crypt/compare/v2.0.1...HEAD)
+
+**Merged pull requests:**
+
+- Scrutinizer Auto-Fixes [\#9](https://github.com/noprotocol/php-mysql-aes-crypt/pull/9) ([scrutinizer-auto-fixer](https://github.com/scrutinizer-auto-fixer))
+
+## [v2.0.1](https://github.com/noprotocol/php-mysql-aes-crypt/tree/v2.0.1) (2018-06-25)
+[Full Changelog](https://github.com/noprotocol/php-mysql-aes-crypt/compare/v2.0.0...v2.0.1)
+
+**Closed issues:**
+
+- Be able to switch between 128-bit and 256-bit [\#8](https://github.com/noprotocol/php-mysql-aes-crypt/issues/8)
+- Can't use AES\_DECRYPT to decrypt data from database [\#7](https://github.com/noprotocol/php-mysql-aes-crypt/issues/7)
 
 **Merged pull requests:**
 
