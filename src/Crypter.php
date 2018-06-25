@@ -23,6 +23,7 @@ class Crypter
 
     /**
      * Crypter constructor.
+     *
      * @param $seed
      * @param string $method default AES-128-ECB
      */
@@ -48,7 +49,7 @@ class Crypter
         $padValue = 16 - (strlen($data) % 16);
 
         return openssl_encrypt(
-            str_pad($data, (16 * (floor(strlen($data) / 16) + 1)), chr($padValue)),
+            str_pad($data, intval(16 * (floor(strlen($data) / 16) + 1)), chr($padValue)),
             $this->method,
             $this->key,
             OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING,
