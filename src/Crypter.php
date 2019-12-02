@@ -45,7 +45,10 @@ class Crypter
     public function encrypt($data)
     {
         $chiperIvLength = openssl_cipher_iv_length($this->method);
-        $iv = openssl_random_pseudo_bytes($chiperIvLength);
+        $iv = '';
+        if ($chiperIvLength > 0) {
+            $iv = openssl_random_pseudo_bytes($chiperIvLength);
+        }
         $padValue = 16 - (strlen($data) % 16);
 
         return openssl_encrypt(

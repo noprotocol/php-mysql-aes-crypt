@@ -3,6 +3,7 @@
     "description": "Encrypt/decrypt data in PHP to a format compatible with MySQL AES_ENCRYPT & AES_DECRYPT functions.",
     "keywords": ["php", "mysql", "aes", "encryption", "decryption", "noprotocol"],
     "require": {
+      "ext-openssl": "*"
     },
     "require-dev": {
        "phpunit/phpunit": "6.0.*",
