@@ -12,6 +12,14 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v1
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extension-csv: openssl #optional, setup extensions
+        coverage: xdebug #optional, setup coverage driver
+        pecl: false #optional, setup PECL
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
